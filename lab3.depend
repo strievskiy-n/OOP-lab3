@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1574677811 source:c:\users\strievskiy-n\documents\Програмирование\3 курс\lab3\lib.cpp
+	"lib.h"
+
+1574677632 c:\users\strievskiy-n\documents\Програмирование\3 курс\lab3\lib.h
+	<cstdlib>
+	<iostream>
+
