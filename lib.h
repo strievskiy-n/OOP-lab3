@@ -18,6 +18,12 @@ public:
     Complex_number operator+(Complex_number& other);
     Complex_number operator+(int& other);
     Complex_number operator+(double& other);
-    Complex_number operator=(double)
+    Complex_number operator-(Complex_number& other);
+    Complex_number operator-(int& other);
+    Complex_number operator-(double& other);
+    void operator=(Complex_number other);
+    bool operator !=(Complex_number& other);
+    /*void print(Complex_number);
+    void print_adress(Complex_number);*/
 };
 
