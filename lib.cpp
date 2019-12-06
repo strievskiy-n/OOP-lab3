@@ -17,14 +17,14 @@ Complex_number Complex_number::operator+(Complex_number& other)
 
     return Complex_number(value, immaterial_part);
 }
-Complex_number Complex_number::operator+(int& other)
+Complex_number Complex_number::operator+(int other)
 {
     double value = this->value + other;
     double immaterial_part = this->immaterial_part;
 
     return Complex_number(value, immaterial_part);
 }
-Complex_number Complex_number::operator+(double& other)
+Complex_number Complex_number::operator+(double other)
 {
     double value = this->value + other;
     double immaterial_part = this->immaterial_part;
@@ -38,15 +38,15 @@ Complex_number Complex_number::operator-(Complex_number& other)
     double immaterial_part = this->immaterial_part-other.immaterial_part;
     return Complex_number(value, immaterial_part);
 }
-Complex_number Complex_number::operator-(int& other)
+Complex_number Complex_number::operator-(int other)
 {
-    double value = this->value-value;
+    double value = this->value-other;
     double immaterial_part = this->immaterial_part;
     return Complex_number(value, immaterial_part);
 }
-Complex_number Complex_number::operator-(double& other)
+Complex_number Complex_number::operator-(double other)
 {
-    double value = this->value-value;
+    double value = this->value-other;
     double immaterial_part = this->immaterial_part;
     return Complex_number(value, immaterial_part);
 }
@@ -57,16 +57,13 @@ void Complex_number::operator=(Complex_number other)
 }
 bool Complex_number::operator !=(Complex_number& other)
 {
-    if (this->value!=other.value)
+    return this->value!=other.value || this->immaterial_part!=other.immaterial_part;
+}
+bool Complex_number::operator == (Complex_number& other)
+{
+    if(this->value==other.value && this->immaterial_part==other.immaterial_part)
     {
-        if(this->immaterial_part!=other.immaterial_part)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return true;
     }
     else
     {

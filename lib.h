@@ -1,6 +1,12 @@
 #include <cstdlib>
 #include <iostream>
 
+#ifndef LIB
+#define LIB
+
+
+using namespace std;
+
 class Complex_number
 {
 public:
@@ -16,14 +22,23 @@ public:
     // c = a + 5
     // c = a + 5.5
     Complex_number operator+(Complex_number& other);
-    Complex_number operator+(int& other);
-    Complex_number operator+(double& other);
+    Complex_number operator+(int other);
+    Complex_number operator+(double other);
     Complex_number operator-(Complex_number& other);
-    Complex_number operator-(int& other);
-    Complex_number operator-(double& other);
+    Complex_number operator-(int other);
+    Complex_number operator-(double other);
     void operator=(Complex_number other);
     bool operator !=(Complex_number& other);
+    bool operator == (Complex_number& other);
     /*void print(Complex_number);
     void print_adress(Complex_number);*/
 };
 
+inline ostream& operator<<(ostream& out, Complex_number& p)
+{
+    out << p.value << "+" << p.immaterial_part << "i";
+
+    return out;
+}
+
+#endif
